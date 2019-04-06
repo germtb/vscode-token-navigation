@@ -1,0 +1,67 @@
+{
+  "name": "token-navigation",
+  "displayName": "token-navigation",
+  "publisher": "germtf",
+  "description": "",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.33.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/germtb/vscode-token-navigation"
+  },
+  "activationEvents": [
+    "onCommand:token-navigation.nextToken",
+    "onCommand:token-navigation.previousToken"
+  ],
+  "main": "./token-navigation.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "token-navigation.nextToken",
+        "title": "Next token"
+      },
+      {
+        "command": "token-navigation.previousToken",
+        "title": "Previous token"
+      }
+    ],
+    "keybindings": [
+      {
+        "key": "alt+l",
+        "command": "token-navigation.nextToken",
+        "when": "editorTextFocus"
+      },
+      {
+        "key": "alt+right",
+        "command": "token-navigation.nextToken",
+        "when": "editorTextFocus"
+      },
+      {
+        "key": "alt+h",
+        "command": "token-navigation.previousToken",
+        "when": "editorTextFocus"
+      },
+      {
+        "key": "alt+left",
+        "command": "token-navigation.previousToken",
+        "when": "editorTextFocus"
+      }
+    ]
+  },
+  "scripts": {
+    "postinstall": "node ./node_modules/vscode/bin/install",
+    "test": "node ./node_modules/vscode/bin/test"
+  },
+  "devDependencies": {
+    "typescript": "^3.3.1",
+    "vscode": "^1.1.28",
+    "eslint": "^5.13.0",
+    "@types/node": "^10.12.21",
+    "@types/mocha": "^2.2.42"
+  }
+}
